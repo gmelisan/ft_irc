@@ -1,0 +1,156 @@
+04.08.2021 13:22:14 [INFO] Started, version 0.1.0
+04.08.2021 13:22:14 [INFO] Exited
+04.08.2021 13:22:31 [INFO] Started, version 0.1.0
+04.08.2021 13:22:31 [INFO] Exited
+04.08.2021 13:22:32 [INFO] Started, version 0.1.0
+04.08.2021 13:22:32 [INFO] Exited
+04.08.2021 13:22:32 [INFO] Started, version 0.1.0
+04.08.2021 13:22:32 [INFO] Exited
+04.08.2021 13:22:32 [INFO] Started, version 0.1.0
+04.08.2021 13:22:32 [INFO] Exited
+04.08.2021 13:22:32 [INFO] Started, version 0.1.0
+04.08.2021 13:22:32 [INFO] Exited
+04.08.2021 13:22:32 [INFO] Started, version 0.1.0
+04.08.2021 13:22:32 [INFO] Exited
+04.08.2021 13:22:33 [INFO] Started, version 0.1.0
+04.08.2021 13:22:33 [INFO] Exited
+04.08.2021 13:22:33 [INFO] Started, version 0.1.0
+04.08.2021 13:22:33 [INFO] Exited
+04.08.2021 13:22:33 [INFO] Started, version 0.1.0
+04.08.2021 13:22:33 [INFO] Exited
+04.08.2021 13:22:45 [INFO] Started, version 0.1.0
+04.08.2021 13:22:45 [INFO] Exited
+04.08.2021 13:29:42 [INFO] Started, version 0.1.0
+04.08.2021 13:29:42 [INFO] Hello, world
+04.08.2021 13:29:52 [INFO] Exited
+04.08.2021 13:31:41 [INFO] Started, version 0.1.0
+04.08.2021 13:31:41 [INFO] Hello, world
+04.08.2021 13:31:45 [INFO] Started, version 0.1.0
+04.08.2021 13:31:45 [INFO] Hello, world
+04.08.2021 13:31:55 [INFO] Exited
+04.08.2021 13:31:57 [INFO] Started, version 0.1.0
+04.08.2021 13:31:57 [INFO] Hello, world
+04.08.2021 13:34:20 [INFO] Started, version 0.1.0
+04.08.2021 13:34:20 [INFO] Hello, world
+04.08.2021 13:34:22 [INFO] Exited
+04.08.2021 13:34:30 [INFO] Started, version 0.1.0
+04.08.2021 13:34:30 [INFO] Hello, world
+04.08.2021 13:34:40 [INFO] Exited
+04.08.2021 13:34:42 [INFO] Started, version 0.1.0
+04.08.2021 13:34:42 [INFO] Hello, world
+04.08.2021 13:34:42 [INFO] Exited
+04.08.2021 13:35:30 [INFO] Started, version 0.1.0
+04.08.2021 13:35:30 [INFO] Hello, world
+04.08.2021 13:35:31 [INFO] Catched signal 2
+04.08.2021 13:35:31 [INFO] Exited
+04.08.2021 13:35:33 [INFO] Started, version 0.1.0
+04.08.2021 13:35:33 [INFO] Hello, world
+04.08.2021 13:35:49 [INFO] Started, version 0.1.0
+04.08.2021 13:35:49 [INFO] Hello, world
+04.08.2021 13:36:24 [INFO] Started, version 0.1.0
+04.08.2021 13:36:24 [INFO] Hello, world
+04.08.2021 13:36:39 [INFO] Started, version 0.1.0
+04.08.2021 13:36:39 [INFO] Hello, world
+04.08.2021 13:36:41 [INFO] Catched signal 15
+04.08.2021 13:36:41 [INFO] Exited
+04.08.2021 14:05:37 [INFO] Started, version 0.1.0
+04.08.2021 14:05:37 [INFO] Exited
+04.08.2021 14:06:18 [INFO] Started, version 0.1.0
+04.08.2021 14:06:18 [INFO] Exited
+04.08.2021 14:06:36 [INFO] Started, version 0.1.0
+04.08.2021 14:06:36 [INFO] Exited
+04.08.2021 14:07:00 [INFO] Started, version 0.1.0
+04.08.2021 14:07:00 [INFO] Exited
+04.08.2021 14:07:33 [INFO] Started, version 0.1.0
+04.08.2021 14:07:33 [INFO] Exited
+04.08.2021 14:07:45 [INFO] Started, version 0.1.0
+04.08.2021 14:07:45 [INFO] Exited
+04.08.2021 14:07:58 [INFO] Started, version 0.1.0
+04.08.2021 14:07:58 [INFO] Exited
+04.08.2021 14:08:02 [INFO] Started, version 0.1.0
+04.08.2021 14:08:02 [INFO] Exited
+04.08.2021 16:01:56 [INFO] Started, version 0.1.0
+04.08.2021 16:01:56 [INFO] Exited
+04.08.2021 16:01:58 [INFO] Started, version 0.1.0
+04.08.2021 16:01:58 [INFO] host: ''
+04.08.2021 16:01:58 [INFO] port_network: 0
+04.08.2021 16:01:58 [INFO] password_network: ''
+04.08.2021 16:01:58 [INFO] port: 0
+04.08.2021 16:01:58 [INFO] password: 'b'
+04.08.2021 16:01:58 [INFO] Exited
+04.08.2021 16:02:11 [INFO] Started, version 0.1.0
+04.08.2021 16:02:11 [INFO] host: ''
+04.08.2021 16:02:11 [INFO] port_network: 0
+04.08.2021 16:02:11 [INFO] password_network: ''
+04.08.2021 16:02:11 [INFO] port: 123
+04.08.2021 16:02:11 [INFO] password: 'abc'
+04.08.2021 16:02:11 [INFO] Exited
+04.08.2021 16:02:19 [INFO] Started, version 0.1.0
+04.08.2021 16:02:22 [INFO] Catched signal 2
+04.08.2021 16:02:22 [INFO] Exited
+04.08.2021 16:04:39 [INFO] Started, version 0.1.0
+04.08.2021 16:04:45 [INFO] Catched signal 2
+04.08.2021 16:04:45 [INFO] Exited
+04.08.2021 16:04:49 [INFO] Started, version 0.1.0
+04.08.2021 16:04:51 [INFO] Catched signal 2
+04.08.2021 16:04:51 [INFO] Exited
+04.08.2021 16:05:00 [INFO] Started, version 0.1.0
+04.08.2021 16:05:02 [INFO] Catched signal 2
+04.08.2021 16:05:02 [INFO] Exited
+04.08.2021 16:05:56 [INFO] Started, version 0.1.0
+04.08.2021 16:05:57 [INFO] Catched signal 2
+04.08.2021 16:05:57 [INFO] Exited
+04.08.2021 16:10:11 [INFO] Started, version 0.1.0
+04.08.2021 16:10:11 [INFO] Exited
+04.08.2021 16:11:21 [INFO] Started, version 0.1.0
+04.08.2021 16:11:21 [INFO] Exited
+04.08.2021 16:12:30 [INFO] Started, version 0.1.0
+04.08.2021 16:12:30 [INFO] Exited
+04.08.2021 16:12:39 [INFO] Started, version 0.1.0
+04.08.2021 16:12:39 [INFO] Exited
+04.08.2021 16:32:33 [INFO] Started, version 0.1.0
+04.08.2021 16:32:33 [INFO] Exited
+04.08.2021 16:32:42 [INFO] Started, version 0.1.0
+04.08.2021 16:32:42 [INFO] Exited
+04.08.2021 16:33:16 [INFO] Started, version 0.1.0
+04.08.2021 16:33:16 [INFO] Exited
+04.08.2021 16:34:07 [INFO] Started, version 0.1.0
+04.08.2021 16:34:07 [INFO] Exited
+04.08.2021 16:34:48 [INFO] Started, version 0.1.0
+04.08.2021 16:36:08 [INFO] Started, version 0.1.0
+04.08.2021 16:36:31 [INFO] Started, version 0.1.0
+04.08.2021 16:36:31 [INFO] Exited
+04.08.2021 16:43:06 [INFO] Started, version 0.1.0
+04.08.2021 16:43:06 [INFO] Exited
+04.08.2021 16:43:10 [INFO] Started, version 0.1.0
+04.08.2021 16:43:10 [INFO] Exited
+04.08.2021 16:43:14 [INFO] Started, version 0.1.0
+04.08.2021 16:43:14 [INFO] Exited
+04.08.2021 16:43:44 [INFO] Started, version 0.1.0
+04.08.2021 16:43:44 [INFO] host: 'host'
+04.08.2021 16:43:44 [INFO] port_network: 123
+04.08.2021 16:43:44 [INFO] password_network: 'abc'
+04.08.2021 16:43:44 [INFO] port: 0
+04.08.2021 16:43:44 [INFO] password: 'adf'
+04.08.2021 16:43:44 [INFO] Exited
+04.08.2021 16:44:16 [INFO] Started, version 0.1.0
+04.08.2021 16:44:16 [INFO] host: 'host'
+04.08.2021 16:44:16 [INFO] port_network: 123
+04.08.2021 16:44:16 [INFO] password_network: 'abc'
+04.08.2021 16:44:16 [INFO] port: 0
+04.08.2021 16:44:16 [INFO] password: 'adf'
+04.08.2021 16:44:16 [INFO] Exited
+04.08.2021 16:44:24 [INFO] Started, version 0.1.0
+04.08.2021 16:44:24 [INFO] host: 'host'
+04.08.2021 16:44:24 [INFO] port_network: 123
+04.08.2021 16:44:24 [INFO] password_network: 'abc'
+04.08.2021 16:44:24 [INFO] port: 11
+04.08.2021 16:44:24 [INFO] password: 'adf'
+04.08.2021 16:44:24 [INFO] Exited
+04.08.2021 16:44:31 [INFO] Started, version 0.1.0
+04.08.2021 16:44:31 [INFO] host: ''
+04.08.2021 16:44:31 [INFO] port_network: 0
+04.08.2021 16:44:31 [INFO] password_network: ''
+04.08.2021 16:44:31 [INFO] port: 11
+04.08.2021 16:44:31 [INFO] password: 'adf'
+04.08.2021 16:44:31 [INFO] Exited
