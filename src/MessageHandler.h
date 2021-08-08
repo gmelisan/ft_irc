@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   MessageHandler.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 11:44:16 by gmelisan          #+#    #+#             */
-/*   Updated: 2021/08/08 15:10:43 by gmelisan         ###   ########.fr       */
+/*   Created: 2021/08/08 14:02:48 by gmelisan          #+#    #+#             */
+/*   Updated: 2021/08/08 15:12:24 by gmelisan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef MESSAGEHANDLER_H
+# define MESSAGEHANDLER_H
 
-# include <vector>
-# include <string>
+#include <list>
+#include "Client.h"
 
-# define Xv(err,res,str)	(x_void(err,res,str,__FILE__,__LINE__))
-# define X(err,res,str)		(x_int(err,res,str,__FILE__,__LINE__))
+extern const char *commands[];
 
-int x_int(int err, int res, const char *str, const char *file, int line);
-void *x_void(void *err, void *res, const char *str, const char *file, int line);
-std::vector<std::string> split_string(std::string str);
+class MessageHandler
+{
+public:
+	MessageHandler(std::list<Client> *clients);
+	void newMessage(std::list<Client>::iterator it);
+	
+private:
+	std::list<Client> *m_clients;
+	std::list<Client>::iterator m_it_current_client;
+
+	void handleCommand(std::string cmd, std::string arg);
+};
 
 #endif

@@ -2,3 +2,5 @@
 .vscode
 doc/*.pdf
 *.log
+*.o
+ircserv
