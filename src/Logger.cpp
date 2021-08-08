@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 11:36:28 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/04 13:31:30 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/08/06 18:42:50 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -59,6 +59,23 @@ void			Logger::error(const char *format, ...)
 	vsnprintf(buf, buf_maxsize - 1, format, ap);
 	va_end(ap);
 	fprintf(m_file, "%s [ERROR] %s\n", getTime().c_str(), buf);
+}
+
+void			Logger::debug(const char *format, ...)
+{
+#ifndef DEBUG
+	(void)format;
+	return ;
+#endif
+	
+	va_list ap;
+	const int buf_maxsize = 1024;
+	char buf[buf_maxsize] = {};
+	
+	va_start(ap, format);
+	vsnprintf(buf, buf_maxsize - 1, format, ap);
+	va_end(ap);
+	fprintf(m_file, "%s [DEBUG] %s\n", getTime().c_str(), buf);
 }
 
 std::string		Logger::getTime()

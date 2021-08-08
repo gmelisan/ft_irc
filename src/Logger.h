@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 13:25:35 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/04 13:28:09 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/08/06 14:49:48 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,6 +23,7 @@ public:
 	~Logger();
 	void info(const char *format, ...) __attribute__ ((format (printf, 2, 3)));
 	void error(const char *format, ...) __attribute__ ((format (printf, 2, 3)));
+	void debug(const char *format, ...) __attribute__ ((format (printf, 2, 3)));
 
 private:
 	FILE *m_file;

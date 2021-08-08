@@ -4,6 +4,7 @@
 #include "Logger.h"
 #include "init.h"
 #include "ft_irc.h"
+#include "Server.h"
 
 namespace ft_irc
 {
@@ -25,5 +26,7 @@ namespace ft_irc
 int		main(int argc, char **argv)
 {
 	init::start(argc, argv);
+	Server server(ft_irc::args.port);
+	server.start();
 	return 0;
 }

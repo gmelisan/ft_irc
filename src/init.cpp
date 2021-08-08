@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 13:37:12 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/04 16:44:10 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/08/05 11:24:48 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -34,6 +34,7 @@ namespace init
 		signal(SIGINT, sighandler);
 		signal(SIGTERM, sighandler);
 		signal(SIGABRT, sighandler);
+		signal(SIGPIPE, SIG_IGN);
 
 		parse_args(argc, argv);
 		logger.info("host: '%s'", ft_irc::args.host.c_str());
@@ -57,6 +58,9 @@ namespace init
 			parse_args_network(argv[1]);
 			ft_irc::args.port = atoi(argv[2]);
 			ft_irc::args.password = argv[3];
+
+			std::cerr << "Connection to server is not supported" << std::endl;
+			exit(1);
 		}
 	}
 

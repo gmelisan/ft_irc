@@ -6,14 +6,16 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 12:55:00 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/04 14:57:35 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/08/06 18:39:59 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #ifndef FT_IRC_H
-#define FT_IRC_H
+# define FT_IRC_H
 
-#include <cstdio>
+# include <cstdio>
+
+# define DEBUG			// undef on release
 
 namespace ft_irc
 {
