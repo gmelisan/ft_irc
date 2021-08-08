@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:18:23 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/08 15:32:00 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/08/08 15:59:33 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,6 +14,7 @@
 #include "utils.h"
 #include "Logger.h"
 
+// example commands
 #define COMMANDS_NUM			3
 const char *commands[] =
 {
@@ -31,7 +32,7 @@ void MessageHandler::newMessage(std::list<Client>::iterator it)
 	// 1 - full command
 	// 2 - part command
 
-	// 1
+	// 1 get command as it is. It is just example to check if it works
 	m_it_current_client = it;
 	std::string buf_read = m_it_current_client->getReadBuffer();
 	for (int i = 0; i < COMMANDS_NUM; ++i) {
@@ -40,6 +41,23 @@ void MessageHandler::newMessage(std::list<Client>::iterator it)
 			handleCommand(commands[i], arg);
 		}
 	}
+
+	// 2 TODO
+
+	// In IRC we have message separator CR LF, so we need to wait until it:
+	// Example: client sending text "COMMAND <crlf>"
+	// So it can be splitted to "CO", "MMA", NND <crlf>"
+	//
+	// Pseudo code be like:
+	//
+	// while (buf = getReadyBuffer() not contains <crlf>) {
+	//     command += buf;
+	// }
+	// splitted = buf.split(<crlf>);
+	// command += splitted[0];
+	// handleCommand(command);
+	// command = splitted[1];
+	
 }
 
 void MessageHandler::handleCommand(std::string cmd, std::string arg)
