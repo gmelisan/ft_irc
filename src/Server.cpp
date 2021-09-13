@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/05 11:27:35 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/08 14:46:18 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/09/13 13:35:09 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -126,10 +126,10 @@ void Server::doAccept()
 
 	csin_len = sizeof(csin);
 	cs = ::accept(m_fd, (struct sockaddr*)&csin, &csin_len);
-	logger.info("New client #%d from %s:%d", cs,
-		   inet_ntoa(csin.sin_addr), ntohs(csin.sin_port));
-	m_clients.push_front(Client(cs));
+	m_clients.push_front(
+		Client(cs, inet_ntoa(csin.sin_addr), ntohs(csin.sin_port)));
+	logger.info("New client #%d from %s:%d", m_clients.front().fd(),
+				m_clients.front().host().c_str(), m_clients.front().port());
 	if (cs > m_client_maxfd)
 		m_client_maxfd = cs;
 }
-
