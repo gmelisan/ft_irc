@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:06:55 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/08 15:33:42 by gmelisan         ###   ########.fr       //
+//   Updated: 2021/09/13 13:31:18 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,8 @@
 #include "Client.h"
 #include "Logger.h"
 
-Client::Client(int fd) : m_alive(true), m_fd(fd), m_pending_send(0)
+Client::Client(int fd, std::string host, int port)
+	: m_host(host), m_port(port), m_alive(true), m_fd(fd), m_pending_send(0)
 {}
 
 bool Client::operator<(const Client &c) const
@@ -26,6 +27,16 @@ bool Client::operator<(const Client &c) const
 bool Client::operator==(const Client &c) const
 {
 	return m_fd == c.m_fd;
+}
+
+std::string Client::host() const
+{
+	return m_host;
+}
+
+int Client::port() const
+{
+	return m_port;
 }
 
 int Client::fd() const

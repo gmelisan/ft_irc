@@ -6,7 +6,7 @@
 #    By: kemmeric <kemmeric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/20 12:48:23 by gmelisan          #+#    #+#              #
-#    Updated: 2021/08/08 14:10:26 by gmelisan         ###   ########.fr        #
+#    Updated: 2021/09/13 15:50:56 by gmelisan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ SRCDIR = src
 SRC = $(addprefix $(SRCDIR)/, \
 main.cpp init.cpp Logger.cpp \
 utils.cpp Server.cpp Client.cpp \
-MessageHandler.cpp)
+MessageHandler.cpp Message.cpp)
 
 HEADER = $(addprefix $(SRCDIR)/, \
 ft_irc.h init.h Logger.h \
 utils.h Server.h Client.h \
-MessageHandler.h)
+MessageHandler.h Message.h)
 
 OBJ = $(SRC:.cpp=.o)
 
