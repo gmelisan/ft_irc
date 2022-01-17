@@ -6,11 +6,14 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 13:37:12 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/08 13:50:34 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 18:19:33 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include <iostream>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 
 #include "init.h"
 #include "ft_irc.h"
@@ -82,7 +85,7 @@ namespace init
 				break ;
 			}
 			++i;
-			token = strtok(nullptr, delim);
+			token = strtok(NULL, delim);
 		}
 		if (i != 3) {
 			std::cerr << "Wrong arguments" << std::endl;

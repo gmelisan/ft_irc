@@ -6,10 +6,11 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:06:55 by gmelisan          #+#    #+#             //
-//   Updated: 2021/09/13 13:31:18 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 18:25:57 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
+#include <cstring>
 #include <sys/socket.h>
 
 #include "Client.h"

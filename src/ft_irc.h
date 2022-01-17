@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 12:55:00 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/06 18:39:59 by gmelisan         ###   ########.fr       //
+/*   Updated: 2022/01/17 18:21:21 by gmelisan         ###   ########.fr       */
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,6 +14,9 @@
 # define FT_IRC_H
 
 # include <cstdio>
+# include <cerrno>
+# include <cstdlib>
+# include <cstring>
 
 # define DEBUG			// undef on release
 

@@ -6,10 +6,12 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:18:23 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/08 15:59:33 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 18:26:51 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
+#include <cstring>
+#include <cstdlib>
 #include "MessageHandler.h"
 #include "utils.h"
 #include "Logger.h"

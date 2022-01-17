@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 11:36:28 by gmelisan          #+#    #+#             //
-//   Updated: 2021/08/06 18:42:50 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 18:21:30 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ Logger::Logger()
 				  << strerror(errno);
 		exit(1);
 	}
-	setbuf(m_file, nullptr);
+	setbuf(m_file, NULL);
 	info("Started, version %s", ft_irc::program_version);
 }
 

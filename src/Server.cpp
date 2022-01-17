@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/05 11:27:35 by gmelisan          #+#    #+#             //
-//   Updated: 2021/09/13 13:35:09 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 18:28:50 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,6 +16,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/errno.h>
+#include <cstring>
+#include <algorithm>
 
 #include "Server.h"
 #include "Logger.h"
@@ -87,7 +89,7 @@ void Server::doSelect()
 	int ret = ::select(m_select_data.nfds,
 								 &m_select_data.readfds,
 								 &m_select_data.writefds,
-								 nullptr, nullptr);
+								 NULL, NULL);
 	if (ret < 0) {
 		logger.error("select() error: %s", strerror(errno));
 	}
