@@ -6,13 +6,13 @@
 #    By: kemmeric <kemmeric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/20 12:48:23 by gmelisan          #+#    #+#              #
-#    Updated: 2021/09/13 15:50:56 by gmelisan         ###   ########.fr        #
+#    Updated: 2022/01/17 23:20:17 by gmelisan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ircserv
 
-CC = clang++
+CC = g++
 CFLAGS = -g -std=c++98 -Wall -Wextra
 
 SRCDIR = src

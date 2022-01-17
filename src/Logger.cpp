@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 11:36:28 by gmelisan          #+#    #+#             //
-//   Updated: 2022/01/17 18:21:30 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/17 23:29:58 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,15 +17,19 @@
 #include "Logger.h"
 #include "ft_irc.h"
 
-Logger logger;
+Logger logger(0);
 
-Logger::Logger()
+Logger::Logger(int use_file)
 {
-	m_file = fopen(ft_irc::logpath, "a");
-	if (!m_file) {
-		std::cerr << "Can't open logfile '" << ft_irc::logpath << "': "
-				  << strerror(errno);
-		exit(1);
+	if (use_file) {
+		m_file = fopen(ft_irc::logpath, "a");
+		if (!m_file) {
+			std::cerr << "Can't open logfile '" << ft_irc::logpath << "': "
+					  << strerror(errno);
+			exit(1);
+		}
+	} else {
+		m_file = stdout;
 	}
 	setbuf(m_file, NULL);
 	info("Started, version %s", ft_irc::program_version);

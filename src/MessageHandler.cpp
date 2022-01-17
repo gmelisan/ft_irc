@@ -6,15 +6,17 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:18:23 by gmelisan          #+#    #+#             //
-//   Updated: 2022/01/17 18:26:51 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/18 00:54:58 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include <cstring>
 #include <cstdlib>
 #include "MessageHandler.h"
+#include "Message.h"
 #include "utils.h"
 #include "Logger.h"
+#include "ft_irc.h"
 
 // example commands
 #define COMMANDS_NUM			3
@@ -30,6 +32,66 @@ MessageHandler::MessageHandler(std::list<Client> *clients) : m_clients(clients)
 
 void MessageHandler::newMessage(std::list<Client>::iterator it)
 {
+	m_it_current_client = it;
+	// TODO invoke getReadBuffer() until it contains <crlf>
+	std::string buf_read = m_it_current_client->getReadBuffer();
+	Message message;
+	message.parse(buf_read);
+	if (!m_it_current_client->m_registered) {
+		handleMessage_Registration(message);
+		return ;
+	}
+	// handle messages after registration
+}
+
+void MessageHandler::handleMessage_Registration(const Message &message)
+{
+	const std::vector<std::string> &message_params = message.params();
+	switch (message.type())
+	{
+	case PASS:
+		if (message_params.size() >= 1 && message_params[0] == ft_irc::args.password)
+			m_it_current_client->m_password_checked = true;
+		break ;
+	case NICK:
+		if (!m_it_current_client->m_password_checked) {
+			m_it_current_client->die("Wrong password\n");
+			return ;
+		}
+			
+		if (message_params.size() >= 1)
+			m_it_current_client->m_nickname = message_params[0];
+		// TODO check NICK collision
+		break ;
+	case USER:
+		if (!m_it_current_client->m_password_checked) {
+			m_it_current_client->die("Wrong password\n");
+			return ;
+		}
+		if (message_params.size() >= 4) {
+			m_it_current_client->m_username = message_params[0];
+			m_it_current_client->m_realname = message_params[3];
+		}
+		
+	default:
+		break ;
+	}
+
+	if (!m_it_current_client->m_username.empty()
+		&& !m_it_current_client->m_nickname.empty()
+		&& m_it_current_client->m_password_checked)
+		m_it_current_client->m_registered = true;
+}
+
+void MessageHandler::handleCommand(std::string cmd, std::string arg)
+{
+	(void)cmd;
+	(void)arg;
+}
+
+
+void MessageHandler::newMessageTest(std::list<Client>::iterator it)
+{
 	// Two cases:
 	// 1 - full command
 	// 2 - part command
@@ -40,7 +102,7 @@ void MessageHandler::newMessage(std::list<Client>::iterator it)
 	for (int i = 0; i < COMMANDS_NUM; ++i) {
 		if (buf_read.find(commands[i], 0) == 0) {
 			std::string arg = buf_read.substr(strlen(commands[i]));
-			handleCommand(commands[i], arg);
+			handleCommandTest(commands[i], arg);
 		}
 	}
 
@@ -62,7 +124,7 @@ void MessageHandler::newMessage(std::list<Client>::iterator it)
 	
 }
 
-void MessageHandler::handleCommand(std::string cmd, std::string arg)
+void MessageHandler::handleCommandTest(std::string cmd, std::string arg)
 {
 	std::list<Client>::iterator it;
 	

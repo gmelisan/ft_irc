@@ -6,7 +6,7 @@
 /*   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 14:06:13 by gmelisan          #+#    #+#             */
-//   Updated: 2021/09/13 13:36:56 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/18 00:53:20 by gmelisan         ###   ########.fr       //
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,25 @@
 class Client
 {
 public:
-	Client(int fd, std::string host, int port);
+	Client(int fd, const std::string &host, int port);
 	bool operator<(const Client &c) const;
 	bool operator==(const Client &c) const;
 	std::string host() const;
 	int port() const;
 	int fd() const;
+	void die(const std::string &message = "");
 	bool alive() const;
 	std::string getReadBuffer() const;
 	bool pendingSend() const;
 	void readySend(const char *data);
 	void send();
 	void receive();
+
+	bool m_password_checked;
+	bool m_registered;
+	std::string m_nickname;
+	std::string m_username;
+	std::string m_realname;
 		
 private:
 	std::string m_host;
@@ -44,7 +51,7 @@ private:
 
 	std::string m_read_command; // past tense `read', build from multiple data in m_buf_read
 
-	std::string username;
+	
 };
 
 #endif

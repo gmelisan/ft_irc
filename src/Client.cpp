@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/08 14:06:55 by gmelisan          #+#    #+#             //
-//   Updated: 2022/01/17 18:25:57 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/18 00:53:32 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,9 +16,12 @@
 #include "Client.h"
 #include "Logger.h"
 
-Client::Client(int fd, std::string host, int port)
+Client::Client(int fd, const std::string &host, int port)
 	: m_host(host), m_port(port), m_alive(true), m_fd(fd), m_pending_send(0)
-{}
+{
+	m_password_checked = false;
+	m_registered = false;
+}
 
 bool Client::operator<(const Client &c) const
 {
@@ -43,6 +46,13 @@ int Client::port() const
 int Client::fd() const
 {
 	return m_fd;
+}
+
+void Client::die(const std::string &message)
+{
+	if (!message.empty())
+		::send(m_fd, message.c_str(), message.size(), 0);
+	m_alive = false;
 }
 
 bool Client::alive() const
@@ -80,8 +90,7 @@ void Client::send()
 
 	int r = ::send(m_fd, m_buf_write, strlen(m_buf_write), 0);
 	if (r <= 0) {
-		logger.info("Client #%d disconnected", m_fd);
-		m_alive = false;
+		die();
 		return ;
 	}
 	m_pending_send = false;
@@ -97,8 +106,7 @@ void Client::receive()
 	memset(m_buf_read, 0, BUFSIZE);
 	r = recv(m_fd, m_buf_read, BUFSIZE, 0);
 	if (r <= 0) {
-		logger.info("Client #%d disconnected", m_fd);
-		m_alive = false;
+		die();
 		return ;
 	}
 	logger.info("get string '%s'", m_buf_read);

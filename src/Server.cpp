@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/05 11:27:35 by gmelisan          #+#    #+#             //
-//   Updated: 2022/01/17 18:28:50 by gmelisan         ###   ########.fr       //
+//   Updated: 2022/01/18 00:49:05 by gmelisan         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -46,8 +46,9 @@ void Server::create(int port)
 {
 	struct sockaddr_in sin;
 	struct protoent *pe;
+	int true_val = 1;
 
-	logger.debug("create server");
+	//logger.debug("create server");
 	pe = (struct protoent*)Xv(NULL, ::getprotobyname("tcp"), "getprotobyname");
 	m_fd = X(-1, socket(PF_INET, SOCK_STREAM, pe->p_proto), "socket");
 	logger.debug("server socket fd = %d", m_fd);
@@ -55,6 +56,7 @@ void Server::create(int port)
 	sin.sin_family = AF_INET;
 	sin.sin_addr.s_addr = INADDR_ANY;
 	sin.sin_port = htons(port);
+	X(-1, ::setsockopt(m_fd, SOL_SOCKET, SO_REUSEADDR, &true_val, sizeof(int)), "setsockopt");
 	X(-1, ::bind(m_fd, (struct sockaddr*)&sin, sizeof(sin)), "bind");
 	X(-1, ::listen(m_fd, 42), "listen");
 	logger.info("Listening on port %d", port);
@@ -64,7 +66,7 @@ void Server::prepareSelectData()
 {
 	std::list<Client>::iterator it;
 
-	logger.debug("prepare select data");
+	//logger.debug("prepare select data");
 	FD_ZERO(&m_select_data.readfds);
 	FD_ZERO(&m_select_data.writefds);
 
@@ -85,7 +87,7 @@ void Server::prepareSelectData()
 
 void Server::doSelect()
 {
-	logger.debug("select()");
+	//logger.debug("select()");
 	int ret = ::select(m_select_data.nfds,
 								 &m_select_data.readfds,
 								 &m_select_data.writefds,
@@ -101,13 +103,15 @@ void Server::process()
 	for (it = m_clients.begin(); it != m_clients.end();) {
 		if (FD_ISSET(it->fd(), &m_select_data.readfds)) {
 			it->receive();
-			m_message_handler.newMessage(it);
+			if (it->alive())
+				m_message_handler.newMessage(it);
 		}
 		if (FD_ISSET(it->fd(), &m_select_data.writefds)) {
 			it->send();
 		}
 		if (!it->alive()) {
-			logger.debug("erase client %d", it->fd());
+			// logger.debug("erase client %d", it->fd());
+			logger.info("Client #%d disconnected", it->fd());
 			close(it->fd());
 			it = m_clients.erase(it);
 			m_client_maxfd = max_element(m_clients.begin(), m_clients.end())->fd();

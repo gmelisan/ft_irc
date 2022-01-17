@@ -6,7 +6,7 @@
 //   By: gmelisan <gmelisan@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2021/08/04 12:55:00 by gmelisan          #+#    #+#             //
-/*   Updated: 2022/01/17 18:21:21 by gmelisan         ###   ########.fr       */
+/*   Updated: 2022/01/17 22:34:14 by gmelisan         ###   ########.fr       */
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,6 +26,7 @@ namespace ft_irc
 	extern const char *program_version;
 	extern const char *logpath;
 	extern const char *usage;
+	extern const char *server_name;
 
 	extern const int host_maxsize;
 	extern const int password_maxsize;
